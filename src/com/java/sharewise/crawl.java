@@ -14,9 +14,10 @@ public class crawl {
                 "/usr/bin/chromedriver"); 
         String baseUrl = "https://www.screener.in/login/";
         String expectedTitle = "Welcome: Mercury Tours";
-        String actualTitle = "";
+        float value = 0;
     	PathQueries pathQ= new PathQueries("crawlpaths.properties");
-
+    	Share share = new Share();
+    	String symbol = "TCS";
         // launch Chrome and login with creds
         driver.get(baseUrl);
         driver.findElement(By.name("username")).sendKeys("botta.saisrinivasa@gmail.com");
@@ -25,16 +26,24 @@ public class crawl {
         
        // driver.findElement(By.xpath("//*[@id=\"top-nav-search\"]/div/input")).sendKeys("TCS");
        // driver.findElement(By.className("addon icon-search")).click();
-        driver.get("https://www.screener.in/company/TCS/");
+        driver.get("https://www.screener.in/company/"+symbol+"/");
 
+        share.setSymbol(symbol);
         // get the actual value of the title
-        actualTitle = driver.findElement(By.cssSelector(pathQ.getPath("pe"))).getText();
-        System.out.println(actualTitle);
+        value = Float.parseFloat(driver.findElement(By.cssSelector(pathQ.getPath("pe"))).getText());
+        share.setPe(value);value=0;
+        value = Float.parseFloat(driver.findElement(By.cssSelector(pathQ.getPath("pbv"))).getText());
+        share.setPbv(value);value=0;
+        value = Float.parseFloat(driver.findElement(By.cssSelector(pathQ.getPath("div"))).getText());
+        share.setDiv(value);value=0;
+        value = Float.parseFloat(driver.findElement(By.cssSelector(pathQ.getPath("d2e"))).getText());
+        share.setD2e(value);value=0;
+        value = Float.parseFloat(driver.findElement(By.cssSelector(pathQ.getPath("roce"))).getText());
+        share.setRoce(value);value=0;
 
-       
         //close Firefox
         driver.close();
-        
+        System.out.print(share.toString());
         // exit the program explicitly
         System.exit(0);
     }
