@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>java</groupId>
+  <artifactId>sharewise</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Archetype - sharewise</name>
+  <url>http://maven.apache.org</url>
+      <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.28.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opera</groupId>
+            <artifactId>operadriver</artifactId>
+               <version>1.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.seleniumhq.selenium</groupId>
+                        <artifactId>selenium-remote-driver</artifactId>
+                    </exclusion>
+                </exclusions>
+        </dependency>
+         <dependency>
+			    <groupId>org.jsoup</groupId>
+			    <artifactId>jsoup</artifactId>
+			    <version>1.8.3</version>
+		</dependency>
+    </dependencies>
+</project>
