@@ -49,4 +49,12 @@ public class Share {
 	{
 		return "symbol:"+symbol+",pe:"+pe+",pbv:"+pbv+",div:"+div+",d2e:"+d2e+",roce:"+roce;
 	}
+	public String printHeader()
+	{
+		return "symbol,pe,pbv,div,d2e,roce";
+	}
+	public String toCSV()
+	{
+		return symbol+","+pe+","+pbv+","+div+","+d2e+","+roce;
+	}
 }

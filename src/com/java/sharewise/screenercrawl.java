@@ -84,8 +84,8 @@ public class screenercrawl{
             doc = Jsoup.connect("https://www.screener.in/company/JUSTDIAL/")
             		.cookies(postLogin.cookies())
             		.get();          
-            //Elements ele = doc.select(pathQ.getPath("pe"));
-            Elements ele = doc.select("div#quick-ratios-placeholder li:nth-child(1) > b");
+            Elements ele = doc.select(pathQ.getPath("pe"));
+           // Elements ele = doc.select("div#quick-ratios-placeholder li:nth-child(1) > b");
             System.out.println("Object is :"+ele);
             System.out.println("Value is :"+ele.first().text());
         } catch (IOException e) {

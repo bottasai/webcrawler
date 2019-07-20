@@ -43,7 +43,8 @@ public class crawl {
 
         //close Firefox
         driver.close();
-        System.out.print(share.toString());
+        System.out.println(share.printHeader());
+        System.out.println(share.toCSV());
         // exit the program explicitly
         System.exit(0);
     }
